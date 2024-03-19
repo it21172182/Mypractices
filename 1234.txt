@@ -1,0 +1,48 @@
+create type exchange_varry as VARRAY(3)
+of varchar(40)
+/
+ 
+
+CREATE TYPE stock_type AS OBJECT
+(
+  companyName VARCHAR(20),
+  currentPrice NUMBER(6,2),
+  exchanges exchanges_varray,
+  lastDivident NUMBER(4,2),
+  eps NUMBER(4,2)
+
+)
+/
+
+CREATE TYPE address_type AS OBJECT(
+streetname number char(20),
+street name char(15),
+suburb char(20),
+state char(20),
+pin char(10)
+)
+/
+
+create type investment_type AS OBJECT(
+Companyname varchar(20),
+Purchaseprice number(6,2),
+Date date,
+Quantity number(6)
+)
+/
+
+create type investment_nestedtbl_type as table of investment_type
+/
+
+
+create type client_type as object(
+name varchar(40)
+address address_type
+investment investment_nestedtbl_type
+)
+/
+
+
+
+
+
